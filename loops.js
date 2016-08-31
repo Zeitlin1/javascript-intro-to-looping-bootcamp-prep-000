@@ -1,14 +1,14 @@
-array = []
-strangeArray = []
+
 function forLoop(array) {
   for (i = 0; i < 25; i++) {
-  array.push("I am ${i} strange loop${i === 0 ? : 's' }.");
+  array.push("I am ${i} strange loop${i === 0 ? \'\' : \'s\'}.");
   }
+  return array
 }
 
 function whileLoop(n) {
   while (n > 0) {
-    console.log("${n}")
+    console.log('${n}')
     n--
     if (n === 0){
       return "done"
@@ -17,11 +17,8 @@ function whileLoop(n) {
 }
 
 function doWhileLoop(array) {
+    poppedArray = array.pop
     do {
-      array.pop()
-    } while (maybeTrue() || array.length > 0);
-}
-
-function maybeTrue() {
-  return Math.random() >= 0.5
+    } while ((poppedArray.length > 0 || Math.random() >= 0.5 == false));
+    return poppedArray
 }
